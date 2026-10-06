@@ -8,12 +8,26 @@ using System.Windows.Forms;
 
 namespace Swp
 {
-    public partial class NewForm : Form
+    public partial class AddressForm : Form
     {
-        public NewForm()
+        public AddressForm()
         {
-            Console.WriteLine("hello from form");
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InputAddress_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

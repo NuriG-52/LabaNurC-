@@ -41,20 +41,22 @@
             label5 = new Label();
             Univer = new TextBox();
             menuStrip1 = new MenuStrip();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             базаДанныхToolStripMenuItem = new ToolStripMenuItem();
-            помощьToolStripMenuItem = new ToolStripMenuItem();
             OpenMenuDataBase = new ToolStripMenuItem();
             сохранитьToolStripMenuItem = new ToolStripMenuItem();
+            помощьToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             label6 = new Label();
+            GetHomeAddress = new Button();
+            label7 = new Label();
             GetAddress = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // input_SNFN
             // 
-            input_SNFN.Location = new Point(378, 311);
+            input_SNFN.Location = new Point(375, 409);
             input_SNFN.Name = "input_SNFN";
             input_SNFN.Size = new Size(110, 23);
             input_SNFN.TabIndex = 0;
@@ -70,6 +72,7 @@
             label1.Size = new Size(58, 15);
             label1.TabIndex = 1;
             label1.Text = "Фамилия";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -84,14 +87,14 @@
             // 
             Surname.Location = new Point(232, 48);
             Surname.Name = "Surname";
-            Surname.Size = new Size(100, 23);
+            Surname.Size = new Size(176, 23);
             Surname.TabIndex = 3;
             // 
             // Firstname
             // 
             Firstname.Location = new Point(232, 82);
             Firstname.Name = "Firstname";
-            Firstname.Size = new Size(100, 23);
+            Firstname.Size = new Size(176, 23);
             Firstname.TabIndex = 4;
             // 
             // label3
@@ -116,20 +119,20 @@
             // 
             BDate.Location = new Point(232, 113);
             BDate.Name = "BDate";
-            BDate.Size = new Size(100, 23);
+            BDate.Size = new Size(176, 23);
             BDate.TabIndex = 7;
             // 
             // Pass
             // 
             Pass.Location = new Point(232, 150);
             Pass.Name = "Pass";
-            Pass.Size = new Size(100, 23);
+            Pass.Size = new Size(176, 23);
             Pass.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(40, 189);
+            label5.Location = new Point(38, 231);
             label5.Name = "label5";
             label5.Size = new Size(76, 15);
             label5.TabIndex = 9;
@@ -137,9 +140,9 @@
             // 
             // Univer
             // 
-            Univer.Location = new Point(232, 186);
+            Univer.Location = new Point(232, 228);
             Univer.Name = "Univer";
-            Univer.Size = new Size(100, 23);
+            Univer.Size = new Size(176, 23);
             Univer.TabIndex = 10;
             // 
             // menuStrip1
@@ -151,12 +154,6 @@
             menuStrip1.TabIndex = 11;
             menuStrip1.Text = "menuStrip1";
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
-            contextMenuStrip1.Opening += contextMenuStrip1_Opening;
-            // 
             // базаДанныхToolStripMenuItem
             // 
             базаДанныхToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { OpenMenuDataBase, сохранитьToolStripMenuItem });
@@ -165,6 +162,19 @@
             базаДанныхToolStripMenuItem.Text = "База данных";
             базаДанныхToolStripMenuItem.Click += базаДанныхToolStripMenuItem_Click;
             // 
+            // OpenMenuDataBase
+            // 
+            OpenMenuDataBase.Name = "OpenMenuDataBase";
+            OpenMenuDataBase.Size = new Size(133, 22);
+            OpenMenuDataBase.Text = "Открыть";
+            OpenMenuDataBase.Click += OpenMenuDataBase_Click;
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            сохранитьToolStripMenuItem.Size = new Size(133, 22);
+            сохранитьToolStripMenuItem.Text = "Сохранить";
+            // 
             // помощьToolStripMenuItem
             // 
             помощьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { оПрограммеToolStripMenuItem });
@@ -172,51 +182,64 @@
             помощьToolStripMenuItem.Size = new Size(66, 20);
             помощьToolStripMenuItem.Text = "помощь";
             // 
-            // OpenMenuDataBase
-            // 
-            OpenMenuDataBase.Name = "OpenMenuDataBase";
-            OpenMenuDataBase.Size = new Size(180, 22);
-            OpenMenuDataBase.Text = "Открыть";
-            OpenMenuDataBase.Click += OpenMenuDataBase_Click;
-            // 
-            // сохранитьToolStripMenuItem
-            // 
-            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(180, 22);
-            сохранитьToolStripMenuItem.Text = "Сохранить";
-            // 
             // оПрограммеToolStripMenuItem
             // 
             оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            оПрограммеToolStripMenuItem.Size = new Size(180, 22);
+            оПрограммеToolStripMenuItem.Size = new Size(149, 22);
             оПрограммеToolStripMenuItem.Text = "О программе";
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Opening += contextMenuStrip1_Opening;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(40, 227);
+            label6.Location = new Point(38, 194);
             label6.Name = "label6";
-            label6.Size = new Size(40, 15);
+            label6.Size = new Size(105, 15);
             label6.TabIndex = 13;
-            label6.Text = "Адрес";
+            label6.Text = "Домашний Адрес";
+            // 
+            // GetHomeAddress
+            // 
+            GetHomeAddress.Location = new Point(232, 190);
+            GetHomeAddress.Name = "GetHomeAddress";
+            GetHomeAddress.Size = new Size(176, 23);
+            GetHomeAddress.TabIndex = 14;
+            GetHomeAddress.Text = "Адрес";
+            GetHomeAddress.UseVisualStyleBackColor = true;
+            GetHomeAddress.Click += GetHomeAddress_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(40, 272);
+            label7.Name = "label7";
+            label7.Size = new Size(117, 15);
+            label7.TabIndex = 15;
+            label7.Text = "Адрес университета";
             // 
             // GetAddress
             // 
-            GetAddress.Location = new Point(232, 223);
+            GetAddress.Location = new Point(232, 268);
             GetAddress.Name = "GetAddress";
-            GetAddress.Size = new Size(100, 23);
-            GetAddress.TabIndex = 14;
+            GetAddress.Size = new Size(176, 23);
+            GetAddress.TabIndex = 16;
             GetAddress.Text = "Адрес";
             GetAddress.UseVisualStyleBackColor = true;
-            GetAddress.Click += GetAddress_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(517, 362);
+            ClientSize = new Size(517, 455);
             Controls.Add(GetAddress);
+            Controls.Add(label7);
+            Controls.Add(GetHomeAddress);
             Controls.Add(label6);
             Controls.Add(Univer);
             Controls.Add(label5);
@@ -261,6 +284,8 @@
         private ToolStripMenuItem помощьToolStripMenuItem;
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
         private Label label6;
+        private Button GetHomeAddress;
+        private Label label7;
         private Button GetAddress;
     }
 }

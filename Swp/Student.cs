@@ -7,6 +7,7 @@ namespace Swp
     class Student:Person
     {
         public String Univer {  get; set; }
+        public Address address;
         public Student() { }
     }
 }

@@ -85,9 +85,21 @@ namespace Swp
 
         private void GetAddress_Click(object sender, EventArgs e)
         {
-            NewForm newform = new NewForm();
-            newform.Show();
+         
+          AddressForm af = new AddressForm();
+            af.ShowDialog();
+            this.student.address = new Address(af.Address1.Text,af.Address2.Text,af.Address3.Text);
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GetHomeAddress_Click(object sender, EventArgs e)
+        { 
+            (new AddressForm()).ShowDialog();
         }
     }
 }

@@ -31,6 +31,8 @@ namespace Swp
                     else throw new BdExpection(1);
                 }
             }
+        public Address address;
+
             public Person()
             {
                 this.Surname = null;
