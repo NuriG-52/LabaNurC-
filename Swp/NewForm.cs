@@ -12,6 +12,7 @@ namespace Swp
     {
         public NewForm()
         {
+            Console.WriteLine("hello from form");
             InitializeComponent();
         }
     }
